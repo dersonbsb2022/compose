@@ -217,6 +217,8 @@ services:
     restart: always
     environment:
       # Use the shared environment variables.
+      ETL_TYPE=Unstructured
+      UNSTRUCTURED_API_URL=http://unstructured/general/v0/general
       <<: *shared-api-worker-env
       # Startup mode, 'api' starts the API server.
       MODE: api
@@ -237,6 +239,8 @@ services:
     restart: always
     environment:
       # Use the shared environment variables.
+      ETL_TYPE=Unstructured
+      UNSTRUCTURED_API_URL=http://unstructured/general/v0/general
       <<: *shared-api-worker-env
       # Startup mode, 'worker' starts the Celery worker for processing the queue.
       MODE: worker
