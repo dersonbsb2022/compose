@@ -221,7 +221,7 @@ services:
       # Startup mode, 'api' starts the API server.
       MODE: api
       ETL_TYPE: Unstructured
-      UNSTRUCTURED_API_URL: http://unstructured/general/v0/general
+      UNSTRUCTURED_API_URL: http://unstructured:8000/general/v0/general
     depends_on:
       - db
       - redis
@@ -243,7 +243,7 @@ services:
       # Startup mode, 'worker' starts the Celery worker for processing the queue.
       MODE: worker
       ETL_TYPE: Unstructured
-      UNSTRUCTURED_API_URL: http://unstructured/general/v0/general
+      UNSTRUCTURED_API_URL: http://unstructured:8000/general/v0/general
     depends_on:
       - db
       - redis
